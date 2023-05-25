@@ -1,7 +1,11 @@
-const express = require("express")
+const express = require("express");
 
-const server = express()
+const router = require("./cars/cars-router");
 
-// SİHRİNİZİ GÖSTERİN
+const server = express();
 
-module.exports = server
+server.use(express.json());
+
+server.use("/api/cars", router);
+
+module.exports = server;
